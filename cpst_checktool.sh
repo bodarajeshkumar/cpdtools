@@ -230,9 +230,9 @@ function checkNodesDiskPressure () {
 
 function checkNodesPIDPressure () {
     nodepidpressure="$(oc describe nodes |grep -Ei "Name:|PIDPressure"|tr -d '\n'|sed 's/Name:/\nName:/g'|tail -n +2|awk '{print $2,$4}')" # One liner for all nodes PID pressure
-    logTitle "========================================================"
-    logTitle "================== Nodes PID Pressure =================="
-    logTitle "========================================================"
+    logTitle "========================================================="
+    logTitle "================== Nodes PID Pressure ==================="
+    logTitle "========================================================="
 
     for node in $(echo "$nodepidpressure"|grep -Evi "NAME"|tr ' ' '?')
     do
