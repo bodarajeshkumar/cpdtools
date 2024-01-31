@@ -1,0 +1,107 @@
+[
+    {
+        "name": "OCP",
+        "description": "Health Check for OCP",
+        "tasks": [
+            {
+                "name": "checkNodesStatus",
+                "description": "Check node status is ready",
+                "enabled":true
+            },
+            {
+                "name": "checkNodesCpuMemRequests",
+                "description": "Check node CPU and Memory request",
+                "enabled":"true"
+            },
+            {
+                "name": "checkNodesCpuMemUsg",
+                "description": "Check node CPU and Memory",
+                "enabled":"true"
+            },
+            {
+                "name": "checkNodesDiskPressure",
+                "description": "Check node disk pressure",
+                "enabled":"true"
+            },
+            {
+                "name": "checkNodesPIDPressure",
+                "description": "Check node PID pressure",
+                "enabled":"true"
+            },
+            {
+                "name": "checkNodeTimeDifference",
+                "description": "Check node time difference less than 400ms",
+                "enabled":"true"
+            },
+            {
+                "name": "checkMcpUpdates",
+                "description": "Check MCP updates for nodes are in a correct status"
+            },
+            {
+                "name": "checkClusterOperators",
+                "description": "Check all Cluster operators are in a correct status"
+            },
+            {
+                "name": "checkClusterVersionStatus",
+                "description": "Check ClusterVersion is in a correct status"
+            },
+            {
+                "name": "checkOpenshift",
+                "description": "Check task 1-9"
+            },
+            {
+                "name": "checkCpdPrereqs",
+                "description": "Check PID limit, SCC, node settings for WKC and Informix"
+            },
+            {
+                "name": "checkCatSrcStatus",
+                "description": "Check CatalogSource status in given namespace, default is openshift-marketplace"
+            }
+        ]
+    },
+    {
+        "name": "CP4D",
+        "description": "Health Check for CP4D",
+        "tasks": [
+            {
+                "name": "checkClusterOperators",
+                "description": "All Cluster operators are in a correct status"
+            },
+            {
+                "name": "checkCpdCrdStatus",
+                "description": "Check cpd crd status in given namespace",
+                "enabled":"true"
+            },
+            {
+                "name": "checkCsvStatus",
+                "description": "Check CSV status in given namespace",
+                "enabled":"true"
+            },
+            {
+                "name": "checkFailedPodLogs",
+                "description": "",
+                "enabled":"false"
+            },
+            {
+                "name": "checkPods",
+                "description": "Checking Pods on all namespaces"
+            },
+            {
+                "name": "checkCpd",
+                "description": "Check pod, crd at cpd namespace, check pod, CSV in ibm-common-services"
+            },
+            {
+                "name": "checkAllCpd",
+                "description": "Check task checkCpdPrereqs, checkCpdCrdStatus"
+            },
+            {
+                "name": "checkScaleStatus",
+                "description": "Special check for Storage Specturm scale"
+            },
+            {
+                "name": "checkAll",
+                "description": "Check task checkOpenshift, checkAllCpd"
+            }
+        ]
+    }
+]
