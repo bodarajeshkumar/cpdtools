@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+$oclogin
 # Check if jq is installed
 if ! command -v jq &> /dev/null; then
     echo "jq is not installed. Please install jq."
@@ -7,7 +8,7 @@ if ! command -v jq &> /dev/null; then
 fi
 
 # Define the JSON file containing input
-json_file="./taskList.json"
+json_file="cpdtools/taskList.json"
 
 # Check if the JSON file exists
 if [ ! -f "$json_file" ]; then
@@ -26,5 +27,5 @@ for key in "${keys_array[@]}"; do
     IFS='.' read -r section script <<< "$key"
     echo "=============================================================="
     echo "Processing key: $script"
-    ./cpst_checktool.sh -c $script
+    cpdtools/cpst_checktool.sh -c $script
 done
