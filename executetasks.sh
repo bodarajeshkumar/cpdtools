@@ -8,7 +8,7 @@ if ! command -v jq &> /dev/null; then
 fi
 
 # Define the JSON file containing input
-json_file="cpdtools/taskList.json"
+json_file="./taskList.json"
 
 # Check if the JSON file exists
 if [ ! -f "$json_file" ]; then
